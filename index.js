@@ -1,26 +1,40 @@
-let userName = "João"
-let xp = 50000
+function calculoRanking(vitorias, derrotas)
+{
+    let ranking = vitorias - derrotas;
 
+    if (ranking <= 10){
+        return "Ferro";
+    }
 
-if (xp < 1000){
-    console.log("O Herói de nome " + userName + " está no nível Bronze")
+    if (ranking >= 11 && ranking <= 20){
+        return "Bronze";
+    }
+
+    if (ranking >= 21 && ranking <= 50){
+        return "Prata";
+    }
+
+    if (ranking >= 51 && ranking <= 80){
+        return "Ouro";
+    }
+
+    if (ranking >= 81 && ranking <= 90){
+        return "Diamante";
+    }
+
+    if (ranking >= 91 && ranking <= 100){
+        return "Lendário";
+    }
+
+    if (ranking >= 101){
+        return "Imortal";
+    }
 }
-    else if(xp > 2001 && 5000){
-        console.log("O Herói de nome " + userName + " está no nível Prata")
-    }
-    else if(xp > 5001 && 7000){
-        console.log("O Herói de nome " + userName + " está no nível Ouro")
-    }
-    else if(xp > 7001 && 8000){
-        console.log("O Herói de nome " + userName + " está no nível Platina")
-    }
-    else if(xp > 8001 && 9000){
-        console.log("O Herói de nome " + userName + " está no nível Ascendente")
-    }
-    else if(xp > 9001 && 10000){
-        console.log("O Herói de nome " + userName + " está no nível Imortal")
-    }
-    else{
-        console.log ("O Herói de nome " + userName + " está no nível Radiante")
-    }
+ 
+//for chamando calculo ranking 100x
 
+for (let i = 0; i < 100; i++) {
+        
+    console.log("O herói tem saldo de " + i + " e está no nível " + calculoRanking(i,2))
+   
+}
